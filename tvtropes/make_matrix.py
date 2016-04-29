@@ -1,5 +1,6 @@
 import json
 import ast
+import scipy.io
 from scipy.sparse import dok_matrix
 
 def nameToUrl(string):
@@ -57,18 +58,21 @@ matrix = dok_matrix((workIndex+1,tropeIndex+1))
 
 print "matrix made"
 
+count = 0
 for page in loaded:
     workIndex = works[page['title'][0]]
     for trope in page['all_links']:
         tropeIndex = tropes[trope]
         matrix[workIndex,tropeIndex] = 1
+        count += 1
 
 print "matrix values set"
+print "num values: " + str(count)
 
 matrixfile = open("matrixfile", 'w')
 print "matrix file opened"
 
-matrixfile.write(str(matrix))
+scipy.io.mmwrite(matrixfile, matrix)
 print "matrix written"
 
 matrixfile.close()
