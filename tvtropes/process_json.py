@@ -5,29 +5,18 @@ def nameToUrl(string):
     return string.strip()
 
 jsonfile = open("fixed_tropes_real.json")
-
 print "json file"
 
 jsonstr = jsonfile.read()
-
 print "json string"
 
 decoder = json.JSONDecoder()
-
-
 print "file opened"
 
-#dictionary = dict(jsonfile)
 loaded = decoder.decode(jsonstr)
-
 print "loaded"
 
-print type(loaded)
-
-print loaded[0]['title']
-
 jsonfile.close()
-nameTypeDict = {}
 
 length = range(0,len(loaded))
 
@@ -44,6 +33,7 @@ for i in reversed(length):
 
 print "broken names gone" 
 
+nameTypeDict = {}
 dictfile = open("dictfile",'r+')
 read = dictfile.read()
 if len(read) < 1:
@@ -57,8 +47,22 @@ else:
     print "dictfile read from memeory"
 dictfile.close()
 
+#logfile = open("logfile", "w")
+
 dumpfile = open("dumpfile", 'w')
-for i in range(0,len(loaded)):
+length = range(0,len(loaded))
+for i in reversed(length):
+    try:
+        lookup = nameTypeDict[nameToUrl(loaded[i]['title'][0])]
+    except KeyError:
+        del loaded[i]
+    else:
+        if lookup != "Work":
+            del loaded[i]
+print "removed non-work pages"
+
+length = range(0,len(loaded))
+for i in reversed(length):
     indexes = range(0,len(loaded[i]['all_links']))
     for j in reversed(indexes):
         page = loaded[i]['all_links'][j]
@@ -72,16 +76,15 @@ for i in range(0,len(loaded)):
         else:
             if lookup != "Trope":
                 loaded[i]['all_links'].remove(page) 
+print "removed non-trope links"
 
-for i in range(0,len(loaded)):
-    dumpfile.write("%s\n" % loaded[i]['title'])
-    dumpfile.write("%s\n" % loaded[i]['all_links'])
-
-works = []
+goodjson = json.JSONEncoder().encode(loaded)
+dumpfile.write(goodjson)
 
 print "dumpfile written"
 
 dumpfile.close()
+#logfile.close()
 
 print "done"
 
