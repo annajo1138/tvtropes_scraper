@@ -4,7 +4,7 @@ import ast
 def nameToUrl(string):
     return string.strip()
 
-jsonfile = open("fixed_tropes_real.json")
+jsonfile = open("fixed_tropes_real_copy.json")
 print "json file"
 
 jsonstr = jsonfile.read()
