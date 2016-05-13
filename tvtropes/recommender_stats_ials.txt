@@ -63,18 +63,6 @@ Precision and recall summary statistics by cutoff
 +--------+----------------+----------------+
 [10 rows x 3 columns]
 
-2016-05-09 10:16:07,700 [WARNING] graphlab.product_key, 194: Unable to write current GraphLab Create license to /home/annajo/.graphlab/config. Ensure that this user account                         has write permission to /home/annajo/.graphlab/config to save the license for offline use.
-2016-05-09 10:16:07,701 [WARNING] graphlab.product_key, 194: Unable to write current GraphLab Create license to /home/annajo/.graphlab/config. Ensure that this user account                         has write permission to /home/annajo/.graphlab/config to save the license for offline use.
-This non-commercial license of GraphLab Create is assigned to ajohnson@hmc.edu and will expire on April 12, 2017. For commercial licensing options, visit https://dato.com/buy/.
-This non-commercial license of GraphLab Create is assigned to ajohnson@hmc.edu and will expire on April 12, 2017. For commercial licensing options, visit https://dato.com/buy/.
-2016-05-09 10:16:07,711 [WARNING] graphlab.product_key, 194: Unable to write current GraphLab Create license to /home/annajo/.graphlab/config. Ensure that this user account                         has write permission to /home/annajo/.graphlab/config to save the license for offline use.
-This non-commercial license of GraphLab Create is assigned to ajohnson@hmc.edu and will expire on April 12, 2017. For commercial licensing options, visit https://dato.com/buy/.
-2016-05-09 10:16:07,851 [WARNING] graphlab.product_key, 194: Unable to write current GraphLab Create license to /home/annajo/.graphlab/config. Ensure that this user account                         has write permission to /home/annajo/.graphlab/config to save the license for offline use.
-This non-commercial license of GraphLab Create is assigned to ajohnson@hmc.edu and will expire on April 12, 2017. For commercial licensing options, visit https://dato.com/buy/.
-2016-05-09 10:16:07,916 [WARNING] graphlab.deploy._session, 118: Unable to create session in specified location: '/home/annajo/.graphlab/artifacts'. Using: '/var/tmp/graphlab-annajo/8467/tmp_session_41b8d9f7-e6f0-40ed-9a33-0c440cf006fa'
-2016-05-09 10:16:07,986 [WARNING] graphlab.deploy._session, 118: Unable to create session in specified location: '/home/annajo/.graphlab/artifacts'. Using: '/var/tmp/graphlab-annajo/8468/tmp_session_40a978aa-d358-4a89-9452-bed97a910014'
-2016-05-09 10:16:08,100 [WARNING] graphlab.deploy._session, 118: Unable to create session in specified location: '/home/annajo/.graphlab/artifacts'. Using: '/var/tmp/graphlab-annajo/8470/tmp_session_fdfc30e8-238d-41dc-b3d2-329ffd8d7f64'
-2016-05-09 10:16:08,145 [WARNING] graphlab.deploy._session, 118: Unable to create session in specified location: '/home/annajo/.graphlab/artifacts'. Using: '/var/tmp/graphlab-annajo/8466/tmp_session_8b724f6a-e1ad-406d-825f-d0de77b58a42'
 ('\nOverall RMSE: ', 0.4080328220222233)
 
 Per User RMSE (best)
