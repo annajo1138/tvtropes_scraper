@@ -1,0 +1,114 @@
+Parsing completed. Parsed 1342268 lines in 1.81408 secs.
+Recsys training: model = ranking_factorization_recommender
+Preparing data set.
+    Data has 1201352 observations with 1613 users and 44095 items.
+    Data prepared in: 1.74432s
+Training ranking_factorization_recommender for recommendations.
++------------------------------+--------------------------------------------------+----------+
+| Parameter                    | Description                                      | Value    |
++------------------------------+--------------------------------------------------+----------+
+| num_factors                  | Factor Dimension                                 | 32       |
+| regularization               | L2 Regularization on Factors                     | 1e-09    |
+| max_iterations               | Maximum Number of Iterations                     | 25       |
+| solver                       | Solver used for training                         | ials     |
++------------------------------+--------------------------------------------------+----------+
++---------+--------------+---------------------------+
+| Iter.   | Elapsed time | Estimated Objective Value |
++---------+--------------+---------------------------+
+| Initial | 3.795ms      | NA                        |
++---------+--------------+---------------------------+
+| 0       | 1.31s        | 0.412525                  |
+| 1       | 2.62s        | 0.41329                   |
+| 2       | 3.97s        | 0.414927                  |
+| 3       | 5.32s        | 0.41561                   |
+| 4       | 6.68s        | 0.415814                  |
+| 5       | 8.02s        | 0.41572                   |
+| 6       | 9.61s        | 0.415311                  |
+| 7       | 10.95s       | 0.415025                  |
+| 8       | 12.28s       | 0.414951                  |
+| 9       | 13.51s       | 0.414924                  |
+| 10      | 14.86s       | 0.414902                  |
+| 11      | 16.08s       | 0.414884                  |
+| 12      | 17.43s       | 0.414867                  |
+| 13      | 18.77s       | 0.414852                  |
+| 14      | 20.01s       | 0.414839                  |
+| 15      | 21.31s       | 0.414828                  |
+| 16      | 22.52s       | 0.414818                  |
+| 17      | 23.84s       | 0.414809                  |
+| 18      | 25.09s       | 0.414801                  |
+| 19      | 26.37s       | 0.414793                  |
+| 20      | 27.63s       | 0.414786                  |
+| 21      | 29.01s       | 0.41478                   |
+| 22      | 30.35s       | 0.414774                  |
+| 23      | 31.59s       | 0.414769                  |
+| 24      | 32.88s       | 0.414764                  |
+| FINAL   | 32.88s       | 0.414764                  |
++---------+--------------+---------------------------+
+Optimization Complete: Iteration limit reached.
+
+Precision and recall summary statistics by cutoff
++--------+-----------------+-------------------+
+| cutoff |  mean_precision |    mean_recall    |
++--------+-----------------+-------------------+
+|   1    |  0.010101010101 |  7.3568502483e-07 |
+|   2    |  0.010101010101 | 1.47137004966e-06 |
+|   3    |  0.010101010101 | 2.20705507449e-06 |
+|   4    |  0.010101010101 | 2.94274009932e-06 |
+|   5    | 0.0103535353535 | 9.69093113666e-06 |
+|   6    | 0.0105218855219 | 1.15439845355e-05 |
+|   7    | 0.0106421356421 | 9.64547537354e-05 |
+|   8    | 0.0105744949495 | 9.71904387602e-05 |
+|   9    | 0.0105218855219 | 9.79261237851e-05 |
+|   10   | 0.0104797979798 | 9.86618088099e-05 |
++--------+-----------------+-------------------+
+[10 rows x 3 columns]
+
+2016-05-13 10:42:52,918 [WARNING] graphlab.product_key, 194: Unable to write current GraphLab Create license to /home/annajo/.graphlab/config. Ensure that this user account                         has write permission to /home/annajo/.graphlab/config to save the license for offline use.
+This non-commercial license of GraphLab Create is assigned to ajohnson@hmc.edu and will expire on April 12, 2017. For commercial licensing options, visit https://dato.com/buy/.
+2016-05-13 10:42:53,049 [WARNING] graphlab.product_key, 194: Unable to write current GraphLab Create license to /home/annajo/.graphlab/config. Ensure that this user account                         has write permission to /home/annajo/.graphlab/config to save the license for offline use.
+This non-commercial license of GraphLab Create is assigned to ajohnson@hmc.edu and will expire on April 12, 2017. For commercial licensing options, visit https://dato.com/buy/.
+2016-05-13 10:42:53,072 [WARNING] graphlab.product_key, 194: Unable to write current GraphLab Create license to /home/annajo/.graphlab/config. Ensure that this user account                         has write permission to /home/annajo/.graphlab/config to save the license for offline use.
+This non-commercial license of GraphLab Create is assigned to ajohnson@hmc.edu and will expire on April 12, 2017. For commercial licensing options, visit https://dato.com/buy/.
+2016-05-13 10:42:53,300 [WARNING] graphlab.product_key, 194: Unable to write current GraphLab Create license to /home/annajo/.graphlab/config. Ensure that this user account                         has write permission to /home/annajo/.graphlab/config to save the license for offline use.
+This non-commercial license of GraphLab Create is assigned to ajohnson@hmc.edu and will expire on April 12, 2017. For commercial licensing options, visit https://dato.com/buy/.
+2016-05-13 10:42:54,261 [WARNING] graphlab.deploy._session, 118: Unable to create session in specified location: '/home/annajo/.graphlab/artifacts'. Using: '/var/tmp/graphlab-annajo/4107/tmp_session_eb4ab649-0e7a-4ec0-9ce0-7df820d933d4'
+2016-05-13 10:42:54,478 [WARNING] graphlab.deploy._session, 118: Unable to create session in specified location: '/home/annajo/.graphlab/artifacts'. Using: '/var/tmp/graphlab-annajo/4109/tmp_session_cd393b9f-4c44-44bb-82b7-4128f5487b85'
+2016-05-13 10:42:54,876 [WARNING] graphlab.deploy._session, 118: Unable to create session in specified location: '/home/annajo/.graphlab/artifacts'. Using: '/var/tmp/graphlab-annajo/4118/tmp_session_15eac54c-e09c-49f0-9ec5-4d2b92d25e48'
+2016-05-13 10:42:54,919 [WARNING] graphlab.deploy._session, 118: Unable to create session in specified location: '/home/annajo/.graphlab/artifacts'. Using: '/var/tmp/graphlab-annajo/4108/tmp_session_cf3a603c-6f01-4765-bc83-937e8f757bcc'
+('\nOverall RMSE: ', 0.7301424163085423)
+
+Per User RMSE (best)
++-------+-------+----------------+
+| trope | count |      rmse      |
++-------+-------+----------------+
+|  Nerf |  182  | 0.527451030232 |
++-------+-------+----------------+
+[1 rows x 3 columns]
+
+
+Per User RMSE (worst)
++-----------+-------+---------------+
+|   trope   | count |      rmse     |
++-----------+-------+---------------+
+| Superjail |   1   | 1.00144131551 |
++-----------+-------+---------------+
+[1 rows x 3 columns]
+
+
+Per Item RMSE (best)
++--------------+-------+-------------------+
+|    title     | count |        rmse       |
++--------------+-------+-------------------+
+| Space Trader |   1   | 5.96046447754e-07 |
++--------------+-------+-------------------+
+[1 rows x 3 columns]
+
+
+Per Item RMSE (worst)
++----------------------+-------+---------------+
+|        title         | count |      rmse     |
++----------------------+-------+---------------+
+| Hot Shots! Part Deux |   1   | 1.23735466599 |
++----------------------+-------+---------------+
+[1 rows x 3 columns]
+
