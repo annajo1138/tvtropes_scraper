@@ -1,0 +1,129 @@
+Parsing completed. Parsed 6775010 lines in 11.9344 secs.
+Recsys training: model = ranking_factorization_recommender
+Preparing data set.
+    Data has 6747446 observations with 50861 users and 50033 items.
+    Data prepared in: 31.8709s
+Training ranking_factorization_recommender for recommendations.
++--------------------------------+--------------------------------------------------+----------+
+| Parameter                      | Description                                      | Value    |
++--------------------------------+--------------------------------------------------+----------+
+| num_factors                    | Factor Dimension                                 | 32       |
+| regularization                 | L2 Regularization on Factors                     | 1e-09    |
+| solver                         | Solver used for training                         | sgd      |
+| linear_regularization          | L2 Regularization on Linear Coefficients         | 1e-09    |
+| ranking_regularization         | Rank-based Regularization Weight                 | 0.25     |
+| max_iterations                 | Maximum Number of Iterations                     | 25       |
++--------------------------------+--------------------------------------------------+----------+
+  Optimizing model using SGD; tuning step size.
+  Using 843430 / 6747446 points for tuning the step size.
++---------+-------------------+------------------------------------------+
+| Attempt | Initial Step Size | Estimated Objective Value                |
++---------+-------------------+------------------------------------------+
+| 0       | 25                | Not Viable                               |
+| 1       | 6.25              | Not Viable                               |
+| 2       | 1.5625            | Not Viable                               |
+| 3       | 0.390625          | Not Viable                               |
+| 4       | 0.0976562         | 0.122554                                 |
+| 5       | 0.0488281         | 0.125286                                 |
+| 6       | 0.0244141         | 0.136312                                 |
+| 7       | 0.012207          | 0.156402                                 |
++---------+-------------------+------------------------------------------+
+| Final   | 0.0976562         | 0.122554                                 |
++---------+-------------------+------------------------------------------+
+Starting Optimization.
++---------+--------------+-------------------+-----------------------+-------------+
+| Iter.   | Elapsed Time | Approx. Objective | Approx. Training RMSE | Step Size   |
++---------+--------------+-------------------+-----------------------+-------------+
+| Initial | 250us        | 0.250151          | 0.000411336           |             |
++---------+--------------+-------------------+-----------------------+-------------+
+| 1       | 27.63s       | 0.133918          | 0.23027               | 0.0976562   |
+| 2       | 50.79s       | 0.119154          | 0.227355              | 0.0580668   |
+| 3       | 1m 13s       | 0.112311          | 0.215423              | 0.042841    |
+| 4       | 1m 37s       | 0.108             | 0.211927              | 0.0345267   |
+| 5       | 2m 3s        | 0.104683          | 0.207978              | 0.029206    |
+| 6       | 2m 25s       | 0.101954          | 0.204982              | 0.0254734   |
+| 7       | 2m 47s       | 0.0997537         | 0.202403              | 0.0226922   |
+| 8       | 3m 11s       | 0.0978382         | 0.199916              | 0.0205297   |
+| 9       | 3m 35s       | 0.0961046         | 0.197912              | 0.018794    |
+| 10      | 3m 58s       | 0.0945409         | 0.196084              | 0.017366    |
+| 11      | 4m 21s       | 0.0931211         | 0.194301              | 0.016168    |
+| 12      | 4m 44s       | 0.0917477         | 0.192717              | 0.0151466   |
+| 13      | 5m 8s        | 0.0905842         | 0.191291              | 0.014264    |
+| 14      | 5m 31s       | 0.0895235         | 0.189887              | 0.0134929   |
+| 15      | 5m 58s       | 0.0885076         | 0.188653              | 0.0128124   |
+| 16      | 6m 22s       | 0.0875109         | 0.187293              | 0.012207    |
+| 17      | 6m 46s       | 0.0866148         | 0.186259              | 0.0116644   |
+| 18      | 7m 9s        | 0.0857739         | 0.185113              | 0.011175    |
+| 19      | 7m 31s       | 0.084981          | 0.184009              | 0.0107309   |
+| 20      | 7m 52s       | 0.0842465         | 0.182993              | 0.0103259   |
+| 21      | 8m 17s       | 0.0835054         | 0.182054              | 0.00995487  |
+| 22      | 8m 40s       | 0.0827619         | 0.181062              | 0.00961353  |
+| 23      | 9m 4s        | 0.0821389         | 0.180157              | 0.00929831  |
+| 24      | 9m 28s       | 0.0815224         | 0.179292              | 0.0090062   |
+| 25      | 9m 51s       | 0.0808392         | 0.178408              | 0.00873464  |
++---------+--------------+-------------------+-----------------------+-------------+
+Optimization Complete: Maximum number of passes through the data reached.
+Computing final objective value and training RMSE.
+       Final objective value: 0.0795324
+       Final training RMSE: 0.17427
+recommendations finished on 1000/1000 queries. users per second: 1354.24
+
+Precision and recall summary statistics by cutoff
++--------+----------------+-----------------+
+| cutoff | mean_precision |   mean_recall   |
++--------+----------------+-----------------+
+|   1    |     0.304      | 0.0203138448701 |
+|   2    |      0.33      | 0.0440114900867 |
+|   3    | 0.345666666667 | 0.0693888343406 |
+|   4    |    0.35675     | 0.0955475382887 |
+|   5    |     0.368      |  0.123271197636 |
+|   6    | 0.377166666667 |  0.151385303904 |
+|   7    | 0.385571428571 |  0.179547806113 |
+|   8    |    0.393625    |  0.208236233708 |
+|   9    | 0.397777777778 |  0.235464059578 |
+|   10   |     0.4003     |  0.261534561027 |
++--------+----------------+-----------------+
+[10 rows x 3 columns]
+
+Using default 16 lambda workers.
+To maximize the degree of parallelism, add the following code to the beginning of the program:
+"graphlab.set_runtime_config('GRAPHLAB_DEFAULT_NUM_PYLAMBDA_WORKERS', 80)"
+Note that increasing the degree of parallelism also increases the memory footprint.
+
+Overall RMSE:  0.210478356099
+
+Per User RMSE (best)
++---------+-------+------------------+
+|  title  | count |       rmse       |
++---------+-------+------------------+
+| Sasmira |   8   | 0.00121084748585 |
++---------+-------+------------------+
+[1 rows x 3 columns]
+
+
+Per User RMSE (worst)
++-------------------------------+-------+----------------+
+|             title             | count |      rmse      |
++-------------------------------+-------+----------------+
+| SpongebobSquarePantsEmploy... |   10  | 0.503759691724 |
++-------------------------------+-------+----------------+
+[1 rows x 3 columns]
+
+
+Per Item RMSE (best)
++-----------+-------+-------------------+
+|   trope   | count |        rmse       |
++-----------+-------+-------------------+
+| CuddleBug |   1   | 5.12599945068e-06 |
++-----------+-------+-------------------+
+[1 rows x 3 columns]
+
+
+Per Item RMSE (worst)
++-----------------+-------+---------------+
+|      trope      | count |      rmse     |
++-----------------+-------+---------------+
+| InstantBandages |   1   | 1.58935916424 |
++-----------------+-------+---------------+
+[1 rows x 3 columns]
+

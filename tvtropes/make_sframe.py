@@ -20,10 +20,10 @@ print "loaded"
 
 jsonfile.close()
 
-dictfile = open("dictfile", 'r+')
-readdict = dictfile.read()
-nameTypeDict = ast.literal_eval(readdict)
-dictfile.close()
+#dictfile = open("dictfile", 'r+')
+#readdict = dictfile.read()
+#nameTypeDict = ast.literal_eval(readdict)
+#dictfile.close()
 
 works = {}
 tropes = {}
@@ -31,13 +31,16 @@ tropes = {}
 workIndex = 0
 tropeIndex = 0
 
-for page,pageType in nameTypeDict.iteritems():
-    if pageType == "Trope":
+for page,info in loaded.iteritems():
+    if info[0] == "Trope":
         tropes[page] = tropeIndex
         tropeIndex += 1
-    if pageType == "Work":
+    if info[0] == "Work":
         works[page] = workIndex
         workIndex += 1
+
+print tropeIndex
+print workIndex
 
 print "got index dictionaries"
 
@@ -56,17 +59,21 @@ print "index files written"
 csv = open("sframe.csv", 'w')
 csv.write((u'title`trope`hasTrope\n').encode('utf8'))
 
-for page in loaded:
-    if page['pageType'] == "Work":
-        title = page['title'][0]
-        links = page['all_links']
+count = 0
+
+for page,info in loaded.iteritems():
+    if info[0] == "Work":
+        title = page
+        links = info[1]
         for trope in tropes:
             if trope in links:
+                count += 1
                 towrite = title+u'`'+trope+u'`'+u"1\n"
                 csv.write(towrite.encode('utf8'))
 
 csv.close()
 
+print "lines written: " + str(count)
 #matrixfile = open("matrixfile", 'w')
 #print "matrix file opened"
 

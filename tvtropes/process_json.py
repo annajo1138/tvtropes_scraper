@@ -4,7 +4,7 @@ import ast
 def nameToUrl(string):
     return string.strip()
 
-jsonfile = open("fixed_tropes_real_copy.json")
+jsonfile = open("fixed_tropes_real.json")
 print "json file"
 
 jsonstr = jsonfile.read()
@@ -33,59 +33,78 @@ for i in reversed(length):
 
 print "broken names gone" 
 
-nameTypeDict = {}
-dictfile = open("dictfile",'r+')
-read = dictfile.read()
-if len(read) < 1:
-    #make a dictionary of pages with their types to make lookup fast(er)
-    for i in range(0, len(loaded)):
-        nameTypeDict[nameToUrl(loaded[i]['title'][0])] = loaded[i]['pageType']
-    dictfile.write(str(nameTypeDict))
-    print "dictfile made"
-else:
-    nameTypeDict = ast.literal_eval(read)
-    print "dictfile read from memeory"
-dictfile.close()
-
-#logfile = open("logfile", "w")
-
-dumpfile = open("dumpfile", 'w')
 length = range(0,len(loaded))
-for i in reversed(length):
-    try:
-        lookup = nameTypeDict[nameToUrl(loaded[i]['title'][0])]
+
+fixed_dict = {} 
+#essentially doing reduceByKey on the dictionary
+
+for i in length:
+    title = loaded[i]['title'][0].replace(" ", "")
+    try: 
+        if fixed_dict[title][0] == "Trope" and loaded[i]['pageType'] == "Work": 
+            fixed_dict[title][0] = "Work"
+        fixed_dict[title][1].extend(loaded[i]['all_links'])
     except KeyError:
-        del loaded[i]
-    else:
-        if lookup != "Work":
-            del loaded[i]
-print "removed non-work pages"
+        fixed_dict[title] = [loaded[i]['pageType'], loaded[i]['all_links']]
 
-length = range(0,len(loaded))
-for i in reversed(length):
-    indexes = range(0,len(loaded[i]['all_links']))
+print "did reduce by title on dictionary"
+
+works_dict = {}
+tropes_dict = {}
+creators_dict = {}
+
+for page,info in fixed_dict.iteritems():
+    if info[0] == "Work":
+        works_dict[page] = info
+    elif info[0] == "Trope":
+        tropes_dict[page] = info
+    elif info[0] == "Creator":
+        creators_dict[page] = info
+
+workfile = open("works", 'w')
+worksjson = json.JSONEncoder().encode(works_dict)
+workfile.write(worksjson)
+workfile.close()
+
+tropefile = open("tropes", 'w')
+tropesjson = json.JSONEncoder().encode(tropes_dict)
+tropefile.write(tropesjson)
+tropefile.close()
+
+creatorfile = open("creators", 'w')
+creatorsjson = json.JSONEncoder().encode(creators_dict)
+creatorfile.write(creatorsjson)
+creatorfile.close()
+
+print "made and wrote dicts of works, tropes, and creators"
+
+for page,info in works_dict.iteritems():
+    indexes = range(0,len(info[1]))
     for j in reversed(indexes):
-        page = loaded[i]['all_links'][j]
-        loaded[i]['all_links'][j] = page.split('/')[-1]
-        page = loaded[i]['all_links'][j]
+        name = info[1][j].split('/')[-1]
+        info[1][j] = name
 
         try:
-            lookup = nameTypeDict[page]
+            lookup = fixed_dict[name]
         except KeyError:
-            loaded[i]['all_links'].remove(page)
+            del info[1][j]
         else:
-            if lookup != "Trope":
-                loaded[i]['all_links'].remove(page) 
-print "removed non-trope links"
+            if lookup[0] != "Trope":
+                del info[1][j]
 
-goodjson = json.JSONEncoder().encode(loaded)
+print "removed non-trope links from works"
+
+
+print works_dict["IronMan3"]
+
+dumpfile = open("dumpfile", 'w')
+goodjson = json.JSONEncoder().encode(works_dict)
 dumpfile.write(goodjson)
 
 print "dumpfile written"
 
 dumpfile.close()
-#logfile.close()
 
-print "done"
+print "DONE"
 
     

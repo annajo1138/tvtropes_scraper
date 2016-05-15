@@ -1,0 +1,108 @@
+Parsing completed. Parsed 6775010 lines in 11.5917 secs.
+Recsys training: model = ranking_factorization_recommender
+Preparing data set.
+    Data has 6748957 observations with 50861 users and 50122 items.
+    Data prepared in: 31.7146s
+Training ranking_factorization_recommender for recommendations.
++------------------------------+--------------------------------------------------+----------+
+| Parameter                    | Description                                      | Value    |
++------------------------------+--------------------------------------------------+----------+
+| num_factors                  | Factor Dimension                                 | 32       |
+| regularization               | L2 Regularization on Factors                     | 1e-09    |
+| max_iterations               | Maximum Number of Iterations                     | 25       |
+| solver                       | Solver used for training                         | ials     |
++------------------------------+--------------------------------------------------+----------+
++---------+--------------+---------------------------+
+| Iter.   | Elapsed time | Estimated Objective Value |
++---------+--------------+---------------------------+
+| Initial | 149us        | NA                        |
++---------+--------------+---------------------------+
+| 0       | 6.48s        | 0.662726                  |
+| 1       | 12.92s       | 0.610378                  |
+| 2       | 18.94s       | 0.603813                  |
+| 3       | 25.10s       | 0.602003                  |
+| 4       | 31.56s       | 0.601283                  |
+| 5       | 37.93s       | 0.600924                  |
+| 6       | 44.41s       | 0.600719                  |
+| 7       | 50.90s       | 0.600591                  |
+| 8       | 57.31s       | 0.600505                  |
+| 9       | 1m 3s        | 0.600444                  |
+| 10      | 1m 10s       | 0.600399                  |
+| 11      | 1m 16s       | 0.600364                  |
+| 12      | 1m 22s       | 0.600335                  |
+| 13      | 1m 28s       | 0.600312                  |
+| 14      | 1m 34s       | 0.600293                  |
+| 15      | 1m 41s       | 0.600277                  |
+| 16      | 1m 47s       | 0.600263                  |
+| 17      | 1m 53s       | 0.600252                  |
+| 18      | 2m 0s        | 0.600242                  |
+| 19      | 2m 6s        | 0.600233                  |
+| 20      | 2m 12s       | 0.600226                  |
+| 21      | 2m 18s       | 0.60022                   |
+| 22      | 2m 25s       | 0.600214                  |
+| 23      | 2m 31s       | 0.60021                   |
+| 24      | 2m 37s       | 0.600206                  |
+| FINAL   | 2m 37s       | 0.600206                  |
++---------+--------------+---------------------------+
+Optimization Complete: Iteration limit reached.
+recommendations finished on 1000/1000 queries. users per second: 1255.21
+
+Precision and recall summary statistics by cutoff
++--------+----------------+-----------------+
+| cutoff | mean_precision |   mean_recall   |
++--------+----------------+-----------------+
+|   1    |     0.973      | 0.0517305316162 |
+|   2    |     0.977      |  0.103646499125 |
+|   3    | 0.981666666667 |  0.15567680728  |
+|   4    |     0.9835     |  0.207451947305 |
+|   5    |     0.9844     |  0.258951651337 |
+|   6    | 0.985166666667 |  0.310394476569 |
+|   7    | 0.984571428571 |  0.36095841482  |
+|   8    |    0.981625    |  0.41003317956  |
+|   9    | 0.974222222222 |  0.45573964821  |
+|   10   |     0.9599     |  0.495662624776 |
++--------+----------------+-----------------+
+[10 rows x 3 columns]
+
+Using default 16 lambda workers.
+To maximize the degree of parallelism, add the following code to the beginning of the program:
+"graphlab.set_runtime_config('GRAPHLAB_DEFAULT_NUM_PYLAMBDA_WORKERS', 80)"
+Note that increasing the degree of parallelism also increases the memory footprint.
+
+Overall RMSE:  0.637730134201
+
+Per User RMSE (best)
++------------+-------+-----------------+
+|   title    | count |       rmse      |
++------------+-------+-----------------+
+| Tail'Gator |   6   | 0.0513176478296 |
++------------+-------+-----------------+
+[1 rows x 3 columns]
+
+
+Per User RMSE (worst)
++------------------+-------+----------------+
+|      title       | count |      rmse      |
++------------------+-------+----------------+
+| FiddlerontheRoof |   17  | 0.842535839481 |
++------------------+-------+----------------+
+[1 rows x 3 columns]
+
+
+Per Item RMSE (best)
++------------------------+-------+---------------+
+|         trope          | count |      rmse     |
++------------------------+-------+---------------+
+| CharacterizationTropes |  218  | 0.12011831885 |
++------------------------+-------+---------------+
+[1 rows x 3 columns]
+
+
+Per Item RMSE (worst)
++----------+-------+---------------+
+|  trope   | count |      rmse     |
++----------+-------+---------------+
+| Sampling |   1   | 1.04038826376 |
++----------+-------+---------------+
+[1 rows x 3 columns]
+
