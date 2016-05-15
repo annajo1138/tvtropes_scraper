@@ -4,7 +4,7 @@ import ast
 def nameToUrl(string):
     return string.strip()
 
-jsonfile = open("fixed_tropes_real.json")
+jsonfile = open("actual_min_mem_tropes_real_copy.json")
 print "json file"
 
 jsonstr = jsonfile.read()
@@ -49,36 +49,36 @@ for i in length:
 
 print "did reduce by title on dictionary"
 
-works_dict = {}
-tropes_dict = {}
-creators_dict = {}
+#works_dict = {}
+#tropes_dict = {}
+#creators_dict = {}
 
-for page,info in fixed_dict.iteritems():
-    if info[0] == "Work":
-        works_dict[page] = info
-    elif info[0] == "Trope":
-        tropes_dict[page] = info
-    elif info[0] == "Creator":
-        creators_dict[page] = info
+#for page,info in fixed_dict.iteritems():
+#    if info[0] == "Work":
+#        works_dict[page] = info
+#    elif info[0] == "Trope":
+#        tropes_dict[page] = info
+#    elif info[0] == "Creator":
+#        creators_dict[page] = info
 
-workfile = open("works", 'w')
-worksjson = json.JSONEncoder().encode(works_dict)
-workfile.write(worksjson)
-workfile.close()
+#workfile = open("works", 'w')
+#worksjson = json.JSONEncoder().encode(works_dict)
+#workfile.write(worksjson)
+#workfile.close()
 
-tropefile = open("tropes", 'w')
-tropesjson = json.JSONEncoder().encode(tropes_dict)
-tropefile.write(tropesjson)
-tropefile.close()
+#tropefile = open("tropes", 'w')
+#tropesjson = json.JSONEncoder().encode(tropes_dict)
+#tropefile.write(tropesjson)
+#tropefile.close()
 
-creatorfile = open("creators", 'w')
-creatorsjson = json.JSONEncoder().encode(creators_dict)
-creatorfile.write(creatorsjson)
-creatorfile.close()
+#creatorfile = open("creators", 'w')
+#creatorsjson = json.JSONEncoder().encode(creators_dict)
+#creatorfile.write(creatorsjson)
+#creatorfile.close()
 
 print "made and wrote dicts of works, tropes, and creators"
 
-for page,info in works_dict.iteritems():
+for page,info in fixed_dict.iteritems():
     indexes = range(0,len(info[1]))
     for j in reversed(indexes):
         name = info[1][j].split('/')[-1]
@@ -95,10 +95,10 @@ for page,info in works_dict.iteritems():
 print "removed non-trope links from works"
 
 
-print works_dict["IronMan3"]
+print fixed_dict["IronMan3"]
 
 dumpfile = open("dumpfile", 'w')
-goodjson = json.JSONEncoder().encode(works_dict)
+goodjson = json.JSONEncoder().encode(fixed_dict)
 dumpfile.write(goodjson)
 
 print "dumpfile written"

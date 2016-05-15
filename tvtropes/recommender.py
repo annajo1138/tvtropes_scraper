@@ -28,6 +28,6 @@ def doEval():
 eva = doEval();
 
 recs = model.recommend(['IronMan3', "RWBY", 'TheFlash(2014)', 'Arrow', 'Broadchurch', 'DoctorWho', 'JessicaJones', 'Daredevil', 'Supernatural', 'Sherlock', 'Homestuck', 'GirlGenius', 'GunnerkriggCourt'], k=20)
-recs.print_rows(num_rows=len(recs), num_columns=3)
+recs.print_rows(num_rows=len(recs), num_columns=4)
 
 print "DONE"
