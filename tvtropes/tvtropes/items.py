@@ -14,4 +14,6 @@ class TvtropesItem(scrapy.Item):
     title = scrapy.Field()
     all_links = scrapy.Field()
     pageType = scrapy.Field()
+    url_name = scrapy.Field()
+    namespace = scrapy.Field()
 

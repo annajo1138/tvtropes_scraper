@@ -17,6 +17,12 @@ class TvtropesSpider(scrapy.Spider):
         title = [name.strip() for name in title]
         item['title'] = title
 
+        #urls are better for naming but we grab the title to have something nice to display
+        url_name = response.url.split("/")[-1]
+        
+        #namespace is the category tvtropes puts the page in; not used now, but could be useful
+        namespace = response.url.split("/")[-2]
+
         #get all links in body - excludes index links at bottom, don't need them
         item['all_links'] = []
         content = response.xpath('//*[@id="body"]/div[9]/div[2]/div/div/div[2]/div/div/div[2]/div[3]')
@@ -29,6 +35,10 @@ class TvtropesSpider(scrapy.Spider):
         #mean a group of tropes are more likely
         if len(response.css('.link-reviews').extract())>0:
             item['pageType'] = "Work"
+            print "no reviews"
+        elif len(response.css('.link-reviews.tuck-set').extract())>0:
+            item['pageType'] = "Work"
+            print "some reviews"
         elif "Creator" in response.url:
             item['pageType'] = "Creator"
         else:
