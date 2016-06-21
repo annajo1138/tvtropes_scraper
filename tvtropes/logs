@@ -64,3 +64,70 @@ Traceback (most recent call last):
 URLError: <urlopen error [Errno 111] Connection refused>
 2016-04-17 16:00:22 [boto] ERROR: Unable to read instance data, giving up
 2016-04-17 16:01:30 [scrapy] ERROR: Unable to send mail: To=['annajo1138@gmail.com'] Cc=None Subject="Scrapy stats for: tvtropes" Attachs=0- Connection was refused by other side: 111: Connection refused.
+2016-06-20 15:43:35 [boto] ERROR: Caught exception reading instance data
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/boto/utils.py", line 210, in retry_url
+    r = opener.open(req, timeout=timeout)
+  File "/usr/lib/python2.7/urllib2.py", line 404, in open
+    response = self._open(req, data)
+  File "/usr/lib/python2.7/urllib2.py", line 422, in _open
+    '_open', req)
+  File "/usr/lib/python2.7/urllib2.py", line 382, in _call_chain
+    result = func(*args)
+  File "/usr/lib/python2.7/urllib2.py", line 1214, in http_open
+    return self.do_open(httplib.HTTPConnection, req)
+  File "/usr/lib/python2.7/urllib2.py", line 1184, in do_open
+    raise URLError(err)
+URLError: <urlopen error [Errno 111] Connection refused>
+2016-06-20 15:43:35 [boto] ERROR: Unable to read instance data, giving up
+2016-06-20 16:09:39 [scrapy] ERROR: Unable to send mail: To=['annajo1138@gmail.com'] Cc=None Subject="Scrapy stats for: tvtropes" Attachs=0- Connection was refused by other side: 111: Connection refused.
+2016-06-20 16:14:30 [boto] ERROR: Caught exception reading instance data
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/boto/utils.py", line 210, in retry_url
+    r = opener.open(req, timeout=timeout)
+  File "/usr/lib/python2.7/urllib2.py", line 404, in open
+    response = self._open(req, data)
+  File "/usr/lib/python2.7/urllib2.py", line 422, in _open
+    '_open', req)
+  File "/usr/lib/python2.7/urllib2.py", line 382, in _call_chain
+    result = func(*args)
+  File "/usr/lib/python2.7/urllib2.py", line 1214, in http_open
+    return self.do_open(httplib.HTTPConnection, req)
+  File "/usr/lib/python2.7/urllib2.py", line 1184, in do_open
+    raise URLError(err)
+URLError: <urlopen error [Errno 111] Connection refused>
+2016-06-20 16:14:30 [boto] ERROR: Unable to read instance data, giving up
+2016-06-20 18:47:43 [scrapy] ERROR: Unable to send mail: To=['annajo1138@gmail.com'] Cc=None Subject="Scrapy stats for: tvtropes" Attachs=0- Connection was refused by other side: 111: Connection refused.
+2016-06-20 19:13:50 [boto] ERROR: Caught exception reading instance data
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/boto/utils.py", line 210, in retry_url
+    r = opener.open(req, timeout=timeout)
+  File "/usr/lib/python2.7/urllib2.py", line 404, in open
+    response = self._open(req, data)
+  File "/usr/lib/python2.7/urllib2.py", line 422, in _open
+    '_open', req)
+  File "/usr/lib/python2.7/urllib2.py", line 382, in _call_chain
+    result = func(*args)
+  File "/usr/lib/python2.7/urllib2.py", line 1214, in http_open
+    return self.do_open(httplib.HTTPConnection, req)
+  File "/usr/lib/python2.7/urllib2.py", line 1184, in do_open
+    raise URLError(err)
+URLError: <urlopen error [Errno 111] Connection refused>
+2016-06-20 19:13:50 [boto] ERROR: Unable to read instance data, giving up
+2016-06-20 19:50:31 [scrapy] ERROR: Unable to send mail: To=['annajo1138@gmail.com'] Cc=None Subject="Scrapy stats for: tvtropes" Attachs=0- Connection was refused by other side: 111: Connection refused.
+2016-06-20 20:10:51 [boto] ERROR: Caught exception reading instance data
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/boto/utils.py", line 210, in retry_url
+    r = opener.open(req, timeout=timeout)
+  File "/usr/lib/python2.7/urllib2.py", line 404, in open
+    response = self._open(req, data)
+  File "/usr/lib/python2.7/urllib2.py", line 422, in _open
+    '_open', req)
+  File "/usr/lib/python2.7/urllib2.py", line 382, in _call_chain
+    result = func(*args)
+  File "/usr/lib/python2.7/urllib2.py", line 1214, in http_open
+    return self.do_open(httplib.HTTPConnection, req)
+  File "/usr/lib/python2.7/urllib2.py", line 1184, in do_open
+    raise URLError(err)
+URLError: <urlopen error [Errno 111] Connection refused>
+2016-06-20 20:10:51 [boto] ERROR: Unable to read instance data, giving up
