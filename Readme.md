@@ -1,6 +1,8 @@
-##TVTropes scraper
+## TVTropes scraper
 
-###General info
+### General info
+
+(This project is currently in the process of being cleaned up whenever I have spare time.)
 
 Short version:
 
@@ -14,22 +16,22 @@ I started this project for a data mining class I was taking the spring of 2016, 
 
 ---
 
-###Dependencies
+### Dependencies
 
-#####Required:
+##### Required:
 
 - Python 2.7.11
 - Scrapy 1.0.5
 - SciPy 0.13.3
 - Graphlab 1.9
 
-#####Optional:
+##### Optional:
 - Numba 0.25.0 
 (I used numba's autojit compiler to speed up the recommender. Even with autojit it can take a couple hours, depending on the size of the dataset and which solver you're using.)
 
-###How it works
+### How it works
 
-####Scraper
+#### Scraper
 
 The scraper was made using [Scrapy](http://scrapy.org/) and the majority of it resides in tvtropes/tvtropes. The important/interesting part that actually gets the data I want from the html responses is [tvtropes_spider.py](https://github.com/annajo1138/tvtropes_scraper/blob/master/tvtropes/tvtropes/spiders/tvtropes_spider.py). The scraper can be run using the docrawl.sh bash script (just change the file name, jobdir, and nice value to suit your purposes). You can pause the crawl at any time by doing ctrl-C and waiting for it to finish whatever it was doing and restart by running the script again. For more info, the [Scrapy docs](http://scrapy.org/doc/) are very helpful.
 
@@ -41,5 +43,5 @@ It outputs a JSON file containing the following keys for each page:
 - namespace - the section of the site TVTropes considers the page to be in
 - pageType - whether the page is for a work, trope, or creator
 
-####Processing JSON
+#### Processing JSON
 
