@@ -1,4 +1,5 @@
 import scrapy
+import datetime
 
 from tvtropes.items import TvtropesItem
 
@@ -36,6 +37,8 @@ class TropesSpider(scrapy.Spider):
             item['can_review'] = True
         else:
             item['can_review'] = False
+
+        item['timestamp'] = datetime.datetime.now()
 
         #save item
         yield item

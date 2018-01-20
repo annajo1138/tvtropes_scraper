@@ -16,7 +16,7 @@ NEWSPIDER_MODULE = 'tvtropes.spiders'
 
 
 # Crawl responsibly by identifying yourself (and your website) on the user-agent
-#USER_AGENT = 'tvtropes (+http://www.yourdomain.com)'
+USER_AGENT = 'tvtropes-scrapy-bot (+https://github.com/annajo1138/tvtropes_scraper)'
 
 # Obey robots.txt rules
 ROBOTSTXT_OBEY = True

@@ -16,3 +16,4 @@ class TvtropesItem(scrapy.Item):
     url_name = scrapy.Field()
     namespace = scrapy.Field()
     can_review = scrapy.Field()
+    timestamp = scrapy.Field()
