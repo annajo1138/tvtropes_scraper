@@ -1,0 +1,115 @@
+Finished parsing file /home/annajo/Documents/git/tvtropes_scraper/tvtropes/sframe_big.csv
+Parsing completed. Parsed 1445756449 lines in 2193.09 secs.
+Recsys training: model = ranking_factorization_recommender
+Preparing data set.
+    Data has 1427607684 observations with 16023 users and 75429 items.
+    Data prepared in: 2581.83s
+Training ranking_factorization_recommender for recommendations.
++--------------------------------+--------------------------------------------------+----------+
+| Parameter                      | Description                                      | Value    |
++--------------------------------+--------------------------------------------------+----------+
+| num_factors                    | Factor Dimension                                 | 32       |
+| regularization                 | L2 Regularization on Factors                     | 1e-09    |
+| solver                         | Solver used for training                         | sgd      |
+| linear_regularization          | L2 Regularization on Linear Coefficients         | 1e-09    |
+| ranking_regularization         | Rank-based Regularization Weight                 | 0.25     |
+| max_iterations                 | Maximum Number of Iterations                     | 25       |
++--------------------------------+--------------------------------------------------+----------+
+  Optimizing model using SGD; tuning step size.
+  Using 178450960 / 1427607684 points for tuning the step size.
++---------+-------------------+------------------------------------------+
+| Attempt | Initial Step Size | Estimated Objective Value                |
++---------+-------------------+------------------------------------------+
+| 0       | 25                | Not Viable                               |
+| 1       | 6.25              | Not Viable                               |
+| 2       | 1.5625            | Not Viable                               |
+| 3       | 0.390625          | Not Viable                               |
+| 4       | 0.0976562         | 0.000376656                              |
+| 5       | 0.0488281         | 0.000380896                              |
+| 6       | 0.0244141         | 0.000372503                              |
+| 7       | 0.012207          | 0.000370232                              |
+| 8       | 0.00610352        | 0.000369966                              |
+| 9       | 0.00305176        | 0.000369017                              |
+| 10      | 0.00152588        | 0.000368907                              |
+| 11      | 0.000762939       | 0.000368291                              |
+| 12      | 0.00038147        | 0.000368178                              |
+| 13      | 0.000190735       | 0.000367657                              |
+| 14      | 9.53674e-05       | 0.000365368                              |
+| 15      | 4.76837e-05       | 0.000371333                              |
+| 16      | 2.38419e-05       | 0.000394198                              |
+| 17      | 1.19209e-05       | 0.000425624                              |
++---------+-------------------+------------------------------------------+
+| Final   | 9.53674e-05       | 0.000365368                              |
++---------+-------------------+------------------------------------------+
+Starting Optimization.
++---------+--------------+-------------------+-----------------------+-------------+
+| Iter.   | Elapsed Time | Approx. Objective | Approx. Training RMSE | Step Size   |
++---------+--------------+-------------------+-----------------------+-------------+
+| Initial | 19.968ms     | 0.000277257       | 0.0162562             |             |
++---------+--------------+-------------------+-----------------------+-------------+
+| 1       | 7m 49s       | 8.30753e-05       | 0.00897406            | 9.53674e-05 |
+| 2       | 16m 6s       | 5.3618e-05        | 0.00714034            | 5.67058e-05 |
+| 3       | 24m 29s      | 5.35412e-05       | 0.00713707            | 4.18369e-05 |
+| 4       | 32m 30s      | 5.3518e-05        | 0.00713689            | 3.37175e-05 |
+| 5       | 40m 38s      | 5.35054e-05       | 0.00713681            | 2.85215e-05 |
++---------+--------------+-------------------+-----------------------+-------------+
+Optimization Complete: Convergence on objective within bounds.
+Computing final objective value and training RMSE.
+       Final objective value: 7.1292e-05
+       Final training RMSE: 0.00713662
+recommendations finished on 1000/1000 queries. users per second: 6.02734
+
+Precision and recall summary statistics by cutoff
++--------+----------------+-------------------+
+| cutoff | mean_precision |    mean_recall    |
++--------+----------------+-------------------+
+|   1    |     0.999      | 6.07648796924e-05 |
+|   2    |     0.999      | 0.000121520316782 |
+|   3    |     0.999      | 0.000182275753871 |
+|   4    |     0.999      |  0.00024303119096 |
+|   5    |     0.999      |  0.00030378662805 |
+|   6    |     0.999      | 0.000364542065139 |
+|   7    |     0.999      | 0.000425297502228 |
+|   8    |     0.999      | 0.000486052939317 |
+|   9    |     0.999      | 0.000546808376407 |
+|   10   |     0.999      | 0.000607563813496 |
++--------+----------------+-------------------+
+[10 rows x 3 columns]
+
+('\nOverall RMSE: ', 0.007309337020089131)
+
+Per User RMSE (best)
++---------------------------+-------+-------------------+
+|           title           | count |        rmse       |
++---------------------------+-------+-------------------+
+| The Mary Tyler Moore Show | 30121 | 0.000672851285281 |
++---------------------------+-------+-------------------+
+[1 rows x 3 columns]
+
+
+Per User RMSE (worst)
++-----------+-------+-----------------+
+|   title   | count |       rmse      |
++-----------+-------+-----------------+
+| Lone Wolf | 15207 | 0.0228840428783 |
++-----------+-------+-----------------+
+[1 rows x 3 columns]
+
+
+Per Item RMSE (best)
++-----------+-------+-------------------+
+|   trope   | count |        rmse       |
++-----------+-------+-------------------+
+| Tokusatsu |  239  | 0.000754609964181 |
++-----------+-------+-------------------+
+[1 rows x 3 columns]
+
+
+Per Item RMSE (worst)
++---------------+-------+----------------+
+|     trope     | count |      rmse      |
++---------------+-------+----------------+
+| Foreshadowing |  237  | 0.322621140741 |
++---------------+-------+----------------+
+[1 rows x 3 columns]
+
