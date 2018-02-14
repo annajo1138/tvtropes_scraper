@@ -1,1 +1,1 @@
-echo $(wc -l < tropes_01-22-2018.json) / 279990 \* 100 | bc -l
+echo $(wc -l < tropes_02-12-2018.json) / 374404 \* 100 | bc -l
