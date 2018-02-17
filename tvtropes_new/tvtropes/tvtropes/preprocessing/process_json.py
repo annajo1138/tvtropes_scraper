@@ -4,6 +4,12 @@ import ast
 def nameToUrl(string):
     return string.strip()
 
+def namespaceFromUrl(string):
+    return string.split("/")[-2]
+
+def titleFromUrl(string):
+    return string.split("/")[-1].split("?")[0]
+
 json_file = open("../tropes_01-22-2018.json")
 print("json file")
 
@@ -77,17 +83,43 @@ work_namespaces = ["advertising", "animation", 'anime', 'arg', 'art',
 
 work_dict = {}
 
-# if a title isn't in a work namespace, it must be a trope
+print("building work dict")
+# if a title is in a work namespace, we keep it
+# throw away everything else
 for i in length:
     if json_dict[i]['namespace'].lower() in work_namespaces:
-        work_dict[json_dict[i]['url_name']] = json_dict[i]['all_links']
+        work_dict[titleFromUrl(json_dict[i]['url_name'])] = json_dict[i]['all_links']
 
 # if a namespace matches a work name, throw all of its stuff in with that work
 for i in length:
     if json_dict[i]['namespace'] in work_dict.keys():
         work_dict[json_dict[i]['namespace']] += json_dict[i]['all_links']
 
-# if a namespace matches a trope name, we don't care
+# if a namespace matches a trope name, we don't care; we're only getting
+# the trope side of the matrix from the works; if a trope isn't linked from
+# a work, it's kind of useless
+
+# clean up all the links in the work dict
+
+print("cleaning up all links")
+key_list = work_dict.keys()
+
+for key, val in work_dict.items():
+    cleaned_links = []
+    for i in range(len(val)):
+        clean = titleFromUrl(val[i])
+        if clean not in key_list:
+            cleaned_links += [clean] # python why
+    work_dict[key] = cleaned_links
+
+print(work_dict["FullmetalAlchemist"])
+
+print("writing clean json")
+workfile = open("tropes_01-22-2018_clean.json", 'w')
+# worksjson = json.JSONEncoder().encode(work_dict)
+# workfile.write(worksjson)
+json.dump(work_dict, workfile, indent=4)
+workfile.close()
 
 
 
